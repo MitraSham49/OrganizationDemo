@@ -28,4 +28,11 @@ public class Organization {
         this.organizationName = organizationName;
     }
 
+    public ArrayList<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(ArrayList<Employee> employees) {
+        this.employees = employees;
+    }
 }

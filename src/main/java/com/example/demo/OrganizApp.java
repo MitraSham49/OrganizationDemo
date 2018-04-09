@@ -48,9 +48,9 @@ public class OrganizApp {
 
         for (Organization eachOrganization : allOrganization) {
             System.out.println("These are Employee for " + eachOrganization.getOrganizationName());
-            /*for(Employee  eachEmployee:eachOrganization. ){
+            for(Employee  eachEmployee:eachOrganization.getEmployees() ){
                 //print
-            }*/
+            }
         }
 
     }
