@@ -3,36 +3,38 @@ package com.example.demo;
 import java.util.ArrayList;
 
 public class Organization {
-    private  String organizationName;
-    private ArrayList<Employee> employees;
+    private  String name;
+    private ArrayList<Employee> theEmployees;
 
+    //Default constructor
     public Organization() {
-        employees = new ArrayList<>();
+        theEmployees = new ArrayList<>();
     }
 
-     public  void addEmployee (Employee employee) {
-         employees.add(employee);
-     }
-
-    public Organization(String organizationName) {
-        this.organizationName = organizationName;
-        employees= new ArrayList<>();
+    //Overloaded constructor
+    public Organization(String name) {
+        this.name = name;
+        theEmployees= new ArrayList<>();
+    }
+    public String getName() {
+        return name;
     }
 
-    public String getOrganizationName() {
-        return organizationName;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ArrayList<Employee> getTheEmployees() {
+        return theEmployees;
+    }
+    public void setTheEmployees(ArrayList<Employee> theEmployees) {
+        this.theEmployees = theEmployees;
     }
 
 
-    public void setOrganizationName(String organizationName) {
-        this.organizationName = organizationName;
+    public  void addEmployee (Employee employee) {
+        theEmployees.add(employee);
     }
 
-    public ArrayList<Employee> getEmployees() {
-        return employees;
-    }
 
-    public void setEmployees(ArrayList<Employee> employees) {
-        this.employees = employees;
-    }
 }

@@ -16,10 +16,9 @@ public class OrganizApp {
 
 
         do {
-            anOrganization = new Organization();
             System.out.print("Enter name of organization: ");
             anOrganization = new Organization(keyboard.nextLine());
-            System.out.println("Your Organization  is called:" + anOrganization.getOrganizationName());
+            System.out.println("Your Organization  is called:" + anOrganization.getName());
             do {
                 anEmployee = new Employee();
                 System.out.println("Enter employee name:    ");
@@ -29,16 +28,18 @@ public class OrganizApp {
                 System.out.println("Enter employee Id Number:    ");
                 anEmployee.setEmpNumber(keyboard.nextLine());
 
-                System.out.println("Your employee details:" + anEmployee.getEmpFirstName());
+                System.out.println("Your employee information is: Employee Name: " + anEmployee.getEmpFirstName()+
+                        "  Employee Last Name: " + anEmployee.getEmpLastName()+"  Employee ID Number:" +anEmployee.getEmpNumber());
+
+                anOrganization.addEmployee(anEmployee);
                 System.out.println("Do you want to enter details for another employee?");
                 addEmployee = keyboard.nextLine();
                 if (addEmployee.equalsIgnoreCase("no") || addEmployee.equalsIgnoreCase("n"))
                     empDone = true;
 
-                anOrganization.addEmployee(anEmployee);
-
             } while (!empDone);
-            //Add organization  to the organization of institutions
+            //Add organization  to the organization list
+            empDone =false;
             allOrganization.add(anOrganization);
             System.out.println("Do you want to enter another organization?");
             addOrganization = keyboard.nextLine();
@@ -47,11 +48,16 @@ public class OrganizApp {
         } while (!orgDone);
 
         for (Organization eachOrganization : allOrganization) {
-            System.out.println("These are Employee for " + eachOrganization.getOrganizationName());
-            for(Employee  eachEmployee:eachOrganization.getEmployees() ){
-                //print
+            System.out.println("These are Employee for " + eachOrganization.getName());
+            for(Employee  eachEmployee:eachOrganization.getTheEmployees() ){
+                System.out.println("These are the details of the Employee:"+" Name: "+ eachEmployee.getEmpFirstName()+
+                                "  "+eachEmployee.getEmpLastName()+", EmployeeID:  "+eachEmployee.getEmpNumber());
+
+
+
+            }
             }
         }
 
     }
-}
+
